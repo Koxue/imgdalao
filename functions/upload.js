@@ -14,6 +14,7 @@ export async function onRequestPost(context) {  // Contents of context object
          headers: request.headers,
          body: request.body,
      });
+    console.log(response);
     return response;
   }
   
