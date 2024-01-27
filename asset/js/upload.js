@@ -213,7 +213,7 @@ function render_uploaded() {
     uploaded_files.forEach(function (x) {
         var resp = x.resp;
         var name = resp.data.url.split('/').pop();
-        console.log(resp)
+       
         const WPRAW = "https://i3.wp.com/telegra.ph"  //使用wordpress.com加速
 		const WPCFRAW = "https://i3.wp.com/dalaoimg.pages.dev"  //使用wordpress.com加速cf
         const PhRAW = "https://telegra.ph"   //原地址
@@ -224,6 +224,8 @@ function render_uploaded() {
         var wpurl = resp.data.thumb == null ? WPRAW + resp.data.url : WPRAW + resp.data.thumb.url;
 		var wpcfurl = resp.data.thumb == null ? WPCFRAW + resp.data.url : WPCFRAW + resp.data.thumb.url;
         var RAW = resp.data.thumb == null ? PhRAW + resp.data.url : PhRAW + resp.data.thumb.url;
+	var   imgUrl = resp.data.url;
+	    $.get("https://360063.xyz/tgimg.php?url="+imgUrl,function(){ });
         $('#imagedetail').append(formatHtml({ url: url, code: url }));
         $('#htmlcode').append(formatHtml({ url: url, code: '<img src="' + url + '" />' }));
         $('#bbcode').append(formatHtml({ url: url, code: '[img]' + url + '[/img]'}));
