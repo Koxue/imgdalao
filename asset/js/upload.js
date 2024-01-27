@@ -213,7 +213,7 @@ function render_uploaded() {
     uploaded_files.forEach(function (x) {
         var resp = x.resp;
         var name = resp.data.url.split('/').pop();
-        
+        console.log(resp)
         const WPRAW = "https://i3.wp.com/telegra.ph"  //使用wordpress.com加速
 		const WPCFRAW = "https://i3.wp.com/dalaoimg.pages.dev"  //使用wordpress.com加速cf
         const PhRAW = "https://telegra.ph"   //原地址
@@ -234,7 +234,7 @@ function render_uploaded() {
 
 $smfile.on('fileuploaded', function (event, data, previewId, index) {
     var form = data.form, files = data.files, extra = data.extra, response = data.response, reader = data.reader;
-     console.log(files);
+     //console.log(files);
     if (response.error === undefined) {
         response = { data: { url: response[0].src } }
          //console.log(response);
